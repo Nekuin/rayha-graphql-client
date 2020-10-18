@@ -2,6 +2,18 @@
 
 https://github.com/Nekuin/rayha-graphql-server
 
+## Getting started
+
+`git clone https://github.com/Nekuin/rayha-graphql-client`
+
+`cd rayha-graphql-client`
+
+`npm install`
+
+`npm start`
+
+Addresses are hardcoded to localhost, and assumes port 3001 on the server, feel free to change them in index.js
+
 --
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
