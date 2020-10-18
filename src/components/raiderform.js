@@ -40,6 +40,7 @@ const RaiderForm = ({ submitRaider }) => {
                     <select
                         className="form-control"
                         id="raiderClass"
+                        value={cls}
                         onChange={(e) => {
                             setCls(e.target.value);
                             // we also should change the spec to some default
@@ -59,6 +60,7 @@ const RaiderForm = ({ submitRaider }) => {
                     <select
                         className="form-control"
                         id="raiderClass"
+                        value={spec}
                         onChange={(e) => {
                             setSpec(e.target.value);
                         }}
