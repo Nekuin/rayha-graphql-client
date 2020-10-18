@@ -27,3 +27,33 @@ export const specs = {
     Warlock: ["Affliction", "Destruction", "Demonology"],
     Warrior: ["Arms", "Fury", "Protection"],
 };
+
+export const roles = {
+    DPS: [
+        "Retribution",
+        "Unholy",
+        "Frost",
+        "Havoc",
+        "Balance",
+        "Feral",
+        "Beast Master",
+        "Survival",
+        "Marksmanship",
+        "Fire",
+        "Arcane",
+        "Windwalker",
+        "Shadow",
+        "Subtlety",
+        "Assassination",
+        "Outlaw",
+        "Elemental",
+        "Enhancement",
+        "Affliction",
+        "Destruction",
+        "Demonology",
+        "Arms",
+        "Fury",
+    ],
+    Healer: ["Holy", "Restoration", "Mistweaver", "Discipline"],
+    Tank: ["Protection", "Blood", "Vengeance", "Brewmaster"],
+};

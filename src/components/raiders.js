@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Raider from "./raider";
 import RaiderForm from "./raiderform";
+import SortingHat from "./sortinghat";
 import { useQuery, gql, useMutation } from "@apollo/client";
 
 // get all raiders query
@@ -73,6 +74,7 @@ function Raiders() {
                     return <Raider raider={item} key={"raider" + index} />;
                 })}
                 <RaiderForm submitRaider={submitRaider} />
+                <SortingHat raiders={raiders} />
             </div>
         </>
     );

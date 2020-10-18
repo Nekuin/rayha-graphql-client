@@ -86,3 +86,13 @@ body {
 .raiders label {
     color: #ffffff;
 }
+
+.sorted-section > p {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.sorted-section .raider p {
+    font-size: 0.9rem;
+}
