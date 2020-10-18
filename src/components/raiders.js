@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Raider from "./raider";
 import { useQuery, gql, useMutation, useSubscription } from "@apollo/client";
 
+// get all raiders query
 const RAIDERS = gql`
     query raiders {
         raiders {
@@ -13,6 +14,7 @@ const RAIDERS = gql`
     }
 `;
 
+// add a new raider mutation query
 const ADD_RAIDER = gql`
     mutation addRaider($name: String!, $class: String!, $spec: String!) {
         addRaider(name: $name, class: $class, spec: $spec) {
@@ -23,6 +25,7 @@ const ADD_RAIDER = gql`
     }
 `;
 
+// subscribe to raider added events
 const RAIDER_SUB = gql`
     subscription OnRaiderAdded {
         raiderAdded {
@@ -55,6 +58,8 @@ function Raiders() {
         },
     });
 
+    // put raiders in a state so we can add more
+    // when we receive raiders from the useSubscription hook
     useEffect(() => {
         if (data) {
             setRaiders(data.raiders);
@@ -64,6 +69,7 @@ function Raiders() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{"Error :("}</p>;
 
+    // use the useMutation hook to submit a raider
     const submitRaider = (name, cls, spec) => {
         console.log("adding raider", name, cls, spec);
         addRaider({ variables: { name: name, class: cls, spec: spec } });
