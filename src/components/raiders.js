@@ -42,8 +42,17 @@ function Raiders() {
 
     // fetch raiders query hook
     const { loading, error, data } = useQuery(RAIDERS);
+
     // add a raider mutation hook
-    const [addRaider, { rData }] = useMutation(ADD_RAIDER);
+    const [
+        addRaider,
+        { loading: mutationLoading, error: mutationError },
+    ] = useMutation(ADD_RAIDER, {
+        onError(error) {
+            console.log("mutation error", error.message);
+        },
+    });
+
     // subscribe to changes in raiders (well at least "added" changes)
     // -- kind of annoying but subscribers actually subscribe twice in dev environment
     // BUT THIS DOES GO AWAY IN A PRODUCTION BUILD! (tested)
@@ -83,6 +92,7 @@ function Raiders() {
                     return <Raider raider={item} key={"raider" + index} />;
                 })}
                 <RaiderForm submitRaider={submitRaider} />
+                {mutationError && <p>sotp</p>}
             </div>
         </>
     );
