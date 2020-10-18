@@ -2,6 +2,7 @@
   "name": "graphql-client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://xn--ryh-qlac.com/shadowlands",
   "dependencies": {
     "@apollo/client": "^3.2.4",
     "@testing-library/jest-dom": "^4.2.4",
