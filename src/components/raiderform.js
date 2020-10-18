@@ -7,8 +7,11 @@ const RaiderForm = ({ submitRaider }) => {
     const [cls, setCls] = useState("Paladin");
     const [spec, setSpec] = useState("Holy");
 
+    const [showNameError, setShowNameError] = useState(false);
+
     const clearForm = () => {
         setCharacterName("");
+        if (showNameError) setShowNameError(false);
     };
 
     return (
@@ -28,6 +31,9 @@ const RaiderForm = ({ submitRaider }) => {
                             setCharacterName(e.target.value);
                         }}
                     />
+                    {showNameError && (
+                        <p style={{ color: "red" }}>Input a character name!</p>
+                    )}
                 </div>
                 <div className="form-group">
                     <label htmlFor="raiderClass">Class</label>
@@ -70,7 +76,7 @@ const RaiderForm = ({ submitRaider }) => {
                     onClick={(e) => {
                         e.preventDefault();
                         if (characterName === "") {
-                            console.log("no character name doe");
+                            setShowNameError(true);
                             return;
                         }
                         submitRaider(characterName, cls, spec);
