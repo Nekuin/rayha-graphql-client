@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import Raider from "./raider";
+import RaiderForm from "./raiderform";
 import { useQuery, gql, useMutation, useSubscription } from "@apollo/client";
 
 // get all raiders query
@@ -81,18 +82,7 @@ function Raiders() {
                 {raiders.map((item, index) => {
                     return <Raider raider={item} key={"raider" + index} />;
                 })}
-                <div className="row">
-                    <div className="mx-auto mt-3">
-                        <button
-                            onClick={() =>
-                                submitRaider("Räystö", "Druid", "Balance")
-                            }
-                            className="btn btn-primary"
-                        >
-                            Lisää raideri
-                        </button>
-                    </div>
-                </div>
+                <RaiderForm submitRaider={submitRaider} />
             </div>
         </>
     );
