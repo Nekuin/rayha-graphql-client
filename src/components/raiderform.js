@@ -22,7 +22,7 @@ const RaiderForm = ({ submitRaider }) => {
                 <div className="form-group">
                     <label htmlFor="raiderCharacterName">Character name</label>
                     <input
-                        type="email"
+                        type="text"
                         className="form-control"
                         id="raiderCharacterName"
                         placeholder="Räystö"
